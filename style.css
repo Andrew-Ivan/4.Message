@@ -1,63 +1,143 @@
 .wrapper {
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	background: rgb(255, 197, 197);
-	display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffc5c5;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
-.box {
-	border: 1px solid black;
-	width: 400px;
-	min-height: 300px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	-webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
-
+.errorBox {
+  height: 30px;
+  width: 100%;
+  margin: 10px;
 }
 
-.box span {
-	margin: 10px;
-	font-size: 20px;
+.ramka-2-wr span {
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
-.box input {
-	width: 80%;
-	margin-bottom: 20px;
+.ramka-2 input {
+  width: 80%;
+  margin-bottom: 20px;
+  height: 15px;
+  padding: 10px;
+  font-size: 17px;
+  border: 5px solid rgba(240, 32, 164, 0.556);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) inset, 0 2px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  color: #333;
+  width: 50%;
 }
 
 .entered_value {
-	background: white;
-	text-align: center;
-	padding: 5px;
+  background: white;
+  text-align: center;
+  padding: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+a {
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.btn {
+  text-decoration: none;
+  border: 1px solid #da007f;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  box-shadow: 1px 1px 25px 10px rgba(116, 19, 72, 0.4);
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, #c70074, transparent);
+  transition: all 650ms;
+}
+
+.btn:hover:before {
+  left: 100%;
+}
+
+.ramka-2-wr {
+  width: 25%;
+  height: 30%;
+  box-sizing: border-box;
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+  margin: 30px auto;
+}
+
+.ramka-2-wr .ramka-2 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.ramka-2-wr::before {
+  content: "";
+  position: absolute;
+  width: 170%;
+  height: 220%;
+  background: repeating-linear-gradient(#fff 0%, #ff008c 7.5px, #e1004f 7.5px, #ffffff 15px, white 15px, #d3046c 22.5px, #ffffff 22.5px, #ffffff 30px);
+  transform: translateX(-20%) translateY(-20%) rotate(-45deg);
+  animation: anim-ramka-2 20s linear infinite;
+}
+
+.ramka-2-wr .ramka-2 {
+  position: relative;
+  background-color: #fff;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 30px;
+  text-align: center;
+  font-family: sans-serif;
+  z-index: 2;
+}
+
+.ramka-2-wr,
+.ramka-2-wr .ramka-2 {
+  box-shadow: 0 0 2px #bfe2ff, 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+@keyframes anim-ramka-2 {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 0 450px;
+  }
 }
